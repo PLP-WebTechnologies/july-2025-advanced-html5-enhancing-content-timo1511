@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        img { max-width: 100%; height: auto; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; }
+        nav li { display: inline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conference Registration Form</h1>
+        <img src="banner.jpeg" alt="Conference banner with kittens" />
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#personal">Personal Information</a></li>
+            <li><a href="#preferences">Preferences</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form id="registration" method="post" autocomplete="on">
+            <fieldset id="personal">
+                <legend>Personal Information</legend>
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </fieldset>
+
+            <fieldset id="preferences">
+                <legend>Conference Preferences</legend>
+                <div class="form-group">
+                    <label>Track Selection:</label>
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="track1" name="track1">
+                            <label for="track1">Web Development</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="track2" name="track2">
+                            <label for="track2">Mobile Development</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="track3" name="track3">
+                            <label for="track3">Cloud Computing</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience Level:</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Select level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <section id="schedule">
+                <h2>Conference Schedule</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Session</th>
+                            <th scope="col">Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00</td>
+                            <td>Keynote</td>
+                            <td>Main Hall</td>
+                        </tr>
+                        <tr>
+                            <td>10:30</td>
+                            <td>Workshops</td>
+                            <td>Various Rooms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter any special requirements or comments" aria-describedby="comments-desc"></textarea>
+                <small id="comments-desc">Let us know about dietary needs, accessibility, etc.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="regcode">Registration Code:</label>
+                <input type="text" id="regcode" name="regcode" readonly value="CONF2023">
+            </div>
+
+            <button type="submit">Register</button>
+            <button type="reset">Clear Form</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Conference Registration. All rights reserved.</p>
+    </footer>
+</body>
+</html>
